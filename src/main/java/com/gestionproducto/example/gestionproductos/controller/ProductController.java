@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
 @RestController
-@RequestMapping("/api/v1/products")
+@RequestMapping("/api/v1/products")// 
 public class ProductController {
 
     @Autowired
@@ -29,6 +31,14 @@ public class ProductController {
         return productService.getProductos();
         
     }
+
+    //AGREGAR ENTITY LO QUE SE SOLICITA EN EL EJERCICIO
+
+    @GetMapping
+    public String getMethodName(@RequestParam String param) {
+        return new String();
+    }
+    
 
     @PostMapping
     public Product agreProducto(@RequestBody Product producto) {

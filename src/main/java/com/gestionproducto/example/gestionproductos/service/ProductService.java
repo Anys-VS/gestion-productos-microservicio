@@ -18,16 +18,16 @@ public class ProductService {
         return productRepository.obtenerProductos();
     }
     
-    public Product agregarProducto(Product producto){
-        return productRepository.agregarProducto(producto);
+    public void agregarProducto(Product producto){
+         productRepository.agregarProducto(producto);
     }
 
     public Product buscaProducto(String producto){
-        return productRepository.buscarProducto(producto);
+        return productRepository.buscarProductoPorNombre(producto);
     }
 
-    public String deleteProducto(String producto){
-        productRepository.eliminar(producto);
-        return "Producto eliminado";
+    public boolean deleteProducto(String producto){
+        productRepository.eliminarPorNombre(producto);
+        return productRepository.eliminarPorNombre(producto);
     }
 }
